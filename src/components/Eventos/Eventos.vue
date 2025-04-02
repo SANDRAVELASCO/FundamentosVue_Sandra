@@ -17,6 +17,19 @@
                 <!-- Muestra el nombre ingresado en el campo de entrada -->
                 <p>El nombre ingresado es: <strong>{{nombre}}</strong> </p>
             </div>
+
+            <div>
+                <h3>Evento de mouseenter y mouseleave</h3>
+                <div class="text-center"
+                    style="color: #ffff;  width:200px; height: 200px; background-color: black; text-align: center; padding: 15px; border-radius: 14px;" 
+                    @mouseenter="mostrarMensaje" @mouseleave="OcultarMensaje">
+                    <p> Pase el mouse</p>
+                    <p class="text-white">{{ mensaje }}</p>
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 </template>
@@ -25,7 +38,8 @@
 export default {
     data() {
         return {
-            nombre: '' // Variable para almacenar el nombre ingresado por el usuario
+            nombre: '', // Variable para almacenar el nombre ingresado por el usuario
+            mensaje: '',
         }
     },
     methods: {
@@ -40,6 +54,12 @@ export default {
         // Método que captura el valor ingresado en el campo de texto y lo almacena en la variable nombre
         nombreE(event) {
             this.nombre = event.target.value;
+        },
+        mostrarMensaje(){
+            this.mensaje="El mouse esta dentro del rectangulo"
+        },
+        OcultarMensaje(){
+            this.mensaje="El mensaje está fuera del rectángulo"
         }
     }
 }
