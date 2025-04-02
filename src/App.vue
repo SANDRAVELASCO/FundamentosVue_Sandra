@@ -1,10 +1,12 @@
 <script setup>
-import Eventos from './components/Eventos/Eventos.vue';
+import CalculadoraV1 from './components/calculadora/CalculadoraV1.vue';
+
+//import Eventos from './components/Eventos/Eventos.vue';
 
 </script>
 
 <template>
-    <Eventos />
+    <CalculadoraV1 />
 
 </template>
 <style scoped>
